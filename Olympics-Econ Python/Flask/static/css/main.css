@@ -1,0 +1,137 @@
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 1em;
+}
+
+/* Header */
+.header {
+  background-color: #000;
+  color: #fff;
+  padding: 24px; /* Increase padding by 20% */
+  text-align: center;
+  font-size: 28.8px; /* Increase font size by 20% */
+}
+
+/* Main Section */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Keep the height of the viewport unchanged */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Input Form */
+.form-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 36px; /* Increase padding by 20% */
+  border-radius: 9.6px; /* Increase border-radius by 20% */
+  box-shadow: 0 4.8px 9.6px rgba(0, 0, 0, 0.2); /* Increase shadow by 20% */
+}
+
+.form-container h1 {
+  font-size: 28.8px; /* Increase font size by 20% */
+  margin-bottom: 24px; /* Increase margin by 20% */
+  color: #000;
+}
+
+/* Ensures the .input-group container does not overflow */
+.input-group {
+  margin-bottom: 24px; /* Increase margin by 20% */
+  box-sizing: border-box; /* Includes padding and border in the element's total width */
+}
+
+/* Style for labels to ensure they fit within the container */
+.input-group label {
+  display: block; /* Makes label take full width of the container */
+  margin-bottom: 9.6px; /* Increase margin by 20% */
+  font-weight: bold;
+}
+
+/* Style for input fields to prevent overflow */
+.input-group input {
+  width: 100%; /* Ensures input fields fit within their container */
+  padding: 12px; /* Increase padding by 20% */
+  border-radius: 3px; /* Increase border-radius by 20% */
+  border: 1px solid #ccc;
+  font-size: 19.2px; /* Increase font size by 20% */
+  box-sizing: border-box; /* Includes padding and border in the element's total width */
+}
+
+.button {
+  width: 100%;
+  padding: 12px; /* Increase padding by 20% */
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4.8px; /* Increase border-radius by 20% */
+  font-size: 21.6px; /* Increase font size by 20% */
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #333;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 24px; /* Increase padding by 20% */
+  background-color: #f9f9f9;
+  color: #666;
+  font-size: 16.8px; /* Increase font size by 20% */
+}
+
+/* Hide default datalist dropdown */
+datalist {
+  display: none;
+}
+
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 1em;
+}
+
+/* Ensure the container is positioned relative to manage dropdown positioning */
+.input-group {
+  position: relative; /* Allows positioning of dropdown relative to this container */
+  margin-bottom: 24px; /* Space between input groups */
+}
+
+/* Dropdown container styling */
+.suggestions-container {
+  position: absolute; /* Positioned relative to the input-group container */
+  top: 100%; /* Position the dropdown directly below the input field */
+  left: 0;
+  right: 0; /* Aligns with the input field width */
+  border: 1px solid #ccc; /* Border around the dropdown */
+  background-color: #fff; /* Solid background color */
+  max-height: 150px; /* Limit height to avoid overflow */
+  overflow-y: auto; /* Adds scrollbar if content exceeds max height */
+  z-index: 1000; /* Ensure it appears above other content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+  box-sizing: border-box; /* Includes padding and border in width calculation */
+}
+
+/* Individual suggestion item styling */
+.suggestion-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0; /* Highlight on hover */
+}
+

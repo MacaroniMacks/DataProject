@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Olympics-Econ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+
+  <div class="header">
+      <!-- Header content -->
+  </div>
+
+  <div class="main">
+    <div class="form-container">
+        <h1>Explore The Correlation</h1>
+        <form action="{{ url_for('results') }}" method="POST">
+            <div class="input-group">
+                <label for="country">Country</label>
+                <input type="text" id="country" name="country" placeholder="Start typing a country name...">
+                <div id="country-suggestions" class="suggestions-container"></div>
+              </div>
+              
+              <div class="input-group">
+                <label for="sport">Sport</label>
+                <input type="text" id="sport" name="sport" placeholder="Start typing a sport name...">
+                <div id="sport-suggestions" class="suggestions-container"></div>
+              </div>
+            <button class="button">Analyze</button>
+        </form>
+    </div>
+  </div>
+
+  <div class="footer">
+      <!-- Footer content -->
+  </div>
+
+  <script src="{{ url_for('static', filename='js/autocomplete.js') }}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+</head>
+<body>
+    <h1>{{ message }}</h1>
+    
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button active" data-target="#medals_won">% Medals Won Over Time</button>
+            <button class="tab-button" data-target="#medals_won_change">% Change in % Medals Won</button>
+            <button class="tab-button" data-target="#gdp">GDP Over Time</button>
+            <button class="tab-button" data-target="#gdp_change">% Change in GDP Over Time</button>
+            <button class="tab-button" data-target="#dual_axis">Dual Axis Graph</button>
+        </div>
+
+        <div class="tab-content-container">
+            
+        <div class="tab-content active" id="medals_won">
+            {% if image_paths['medals_won'] %}
+                <img src="data:image/png;base64,{{ image_paths['medals_won'] }}" alt="Medals Won Over Time">
+            {% else %}
+                <p>No data available.</p>
+            {% endif %}
+        </div>
+        <div class="tab-content" id="medals_won_change">
+            {% if image_paths['medals_won_change'] %}
+                <img src="data:image/png;base64,{{ image_paths['medals_won_change'] }}" alt="Change in Medals Won">
+            {% else %}
+                <p>No data available.</p>
+            {% endif %}
+        </div>
+        <div class="tab-content" id="gdp">
+            <div class="tooltip-text">Click to change to GDP per Capita</div>
+            {% if image_paths['gdp'] %}
+                <img src="data:image/png;base64,{{ image_paths['gdp'] }}" alt="GDP Over Time">
+            {% else %}
+                <p>No data available.</p>
+            {% endif %}
+        </div>
+        <div class="tab-content" id="gdp_change">
+            <div class="tooltip-text">Click to change to GDP per Capita</div>
+            {% if image_paths['gdp_change'] %}
+                <img src="data:image/png;base64,{{ image_paths['gdp_change'] }}" alt="Change in GDP">
+            {% else %}
+                <p>No data available.</p>
+            {% endif %}
+        </div>
+        <div class="tab-content" id="dual_axis">
+            <div class="tooltip-text">Click to change to GDP per Capita</div>
+            {% if image_paths['dual_axis'] %}
+                <img src="data:image/png;base64,{{ image_paths['dual_axis'] }}" alt="Dual Axis Graph">
+            {% else %}
+                <p>No data available.</p>
+            {% endif %}
+        </div>
+    </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/tabs.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/tooltip.js') }}"></script>
+</body>

@@ -1,0 +1,90 @@
+h1 {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  font-size: 28.8px; /* Increase font size by 20% */
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+body {
+  margin: 0
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 24px; /* Increased margin to match form padding */
+}
+
+.tab-button {
+  width: 70%;
+  padding: 12px; /* Match button padding */
+  background-color: #ffffff; /* Match button background */
+  color: #888888; /* Match button text color */
+  border: none;
+  font-size: 14.6px; /* Match button font size */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Added color transition */
+}
+
+.tab-button:hover {
+  background-color: #333; /* Match button hover state */
+  color: #ffffff; /* Change text color on hover */
+}
+
+/* Hide all tab content by default */
+.tab-content {
+  display: none;
+  border-top: 2px solid #000000; /* Black top border */
+  border-bottom: 2px solid #000000; /* Black bottom border */
+  padding-top: 20px; /* Optional: Add padding to the content area */
+  padding-bottom: 20px; /* Optional: Add padding to the content area */
+  background-color: #ffffff; /* Optional: Ensure content area background matches */
+  width: 100%; /* Ensures the border extends across the full width */
+  box-sizing: border-box; /* Includes padding and border in width calculation */
+  margin: 0; /* Remove default margin */
+}
+/* Show the active tab content */
+.tab-content.active {
+  display: block;
+}
+
+.tab-content img {
+  width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+/* Container for tooltip */
+.tab-content-container {
+  position: relative; /* To position the tooltip text relative to this container */
+  display: inline-block; /* Ensure container takes only as much space as needed */
+  width: 100%; /* Ensures the border extends across the full width */
+}
+
+/* Tooltip text styling */
+.tooltip-text {
+  visibility: hidden; /* Hidden by default */
+  width: 150px; /* Adjust width as needed */
+  background-color: #555; /* Tooltip background color */
+  color: #fff; /* Tooltip text color */
+  text-align: center; /* Center text alignment */
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px 10px; /* Padding around the text */
+  position: absolute; /* Position absolutely within the container */
+  z-index: 1; /* Ensure tooltip is on top */
+  top: -100%; /* Move tooltip above the container */
+  left: 50%; /* Center horizontally */
+  margin-left: -75px; /* Offset to center */
+  opacity: 0; /* Start with hidden tooltip */
+  transition: opacity 0.3s; /* Smooth transition */
+  pointer-events: none; /* Ensure tooltip does not interfere with cursor events */
+}
+
+/* Show tooltip on hover */
+.tab-content#dual_axis:hover .tooltip-text,
+.tab-content#gdp:hover .tooltip-text,
+.tab-content#gdp_change:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
