@@ -12,18 +12,19 @@ def generateGraphs(country_input, sport_input):
     country = country_input
     sport = sport_input
 
-    # Reading the databases
-    data = pd.read_csv("static/data/Percentages-and-GDP.csv")
-    df = pd.DataFrame(data)
+    # 1. Reading Percentages-and-GDP.csv
+    url1 = 'https://res.cloudinary.com/dkkh1tnhm/raw/upload/v1724429289/Percentages-and-GDP_ppoqqx.csv'
+    df = pd.read_csv(url1, sep=",")
     print("DataFrame df loaded:", df.head())  # Debugging line
 
-
-    data2 = pd.read_csv("static/data/GDPsFormatted.csv")
-    df2 = pd.DataFrame(data2)
+    # 2. Reading GDPsFormatted.csv
+    url2 = 'https://res.cloudinary.com/dkkh1tnhm/raw/upload/v1724429290/GDPsFormatted_ztejiy.csv'
+    df2 = pd.read_csv(url2, sep=",")
     print("DataFrame df2 loaded:", df2.head())  # Debugging line
 
-    data3 = pd.read_csv("static/data/GDPperCapitaFormatted.csv")
-    df3 = pd.DataFrame(data3)
+    # 3. Reading GDPperCapitaFormatted.csv
+    url3 = 'https://res.cloudinary.com/dkkh1tnhm/raw/upload/v1724429289/GDPperCapitaFormatted_wcemj2.csv'
+    df3 = pd.read_csv(url3, sep=",")
     print("DataFrame df3 loaded:", df3.head())  # Debugging line
 
     # Convert 'Year' columns to numeric and handle errors
