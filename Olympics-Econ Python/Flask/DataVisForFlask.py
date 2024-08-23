@@ -13,16 +13,16 @@ def generateGraphs(country_input, sport_input):
     sport = sport_input
 
     # Reading the databases
-    data = pd.read_csv("Percentages-and-GDP.csv")
+    data = pd.read_csv("static/data/Percentages-and-GDP.csv")
     df = pd.DataFrame(data)
     print("DataFrame df loaded:", df.head())  # Debugging line
 
 
-    data2 = pd.read_csv("GDPsFormatted.csv")
+    data2 = pd.read_csv("static/data/GDPsFormatted.csv")
     df2 = pd.DataFrame(data2)
     print("DataFrame df2 loaded:", df2.head())  # Debugging line
 
-    data3 = pd.read_csv("GDPperCapitaFormatted.csv")
+    data3 = pd.read_csv("static/data/GDPperCapitaFormatted.csv")
     df3 = pd.DataFrame(data3)
     print("DataFrame df3 loaded:", df3.head())  # Debugging line
 
