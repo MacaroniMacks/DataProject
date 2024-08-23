@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const tooltip = tabContent.querySelector('.tooltip-text');
           if (tooltip) {
               tooltip.style.left = `${event.pageX - tabContent.offsetLeft}px`;
-              tooltip.style.top = `${event.pageY - tabContent.offsetTop - 120}px`;
+              tooltip.style.top = `${event.pageY - tabContent.offsetTop - 121}px`;
               tooltip.style.visibility = 'visible';
               tooltip.style.opacity = '1';
           }

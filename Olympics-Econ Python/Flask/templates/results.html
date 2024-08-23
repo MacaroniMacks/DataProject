@@ -13,9 +13,9 @@
         <div class="tabs">
             <button class="tab-button active" data-target="#medals_won">% Medals Won Over Time</button>
             <button class="tab-button" data-target="#medals_won_change">% Change in % Medals Won</button>
-            <button class="tab-button" data-target="#gdp">GDP Over Time</button>
-            <button class="tab-button" data-target="#gdp_change">% Change in GDP Over Time</button>
-            <button class="tab-button" data-target="#dual_axis">Dual Axis Graph</button>
+            <button class="tab-button" data-target="#gdp" data-alt-text="GDP per Capita Over Time">GDP Over Time</button>
+            <button class="tab-button" data-target="#gdp_change" data-alt-text="GDP per Capita Change">GDP Change</button>
+            <button class="tab-button" data-target="#dual_axis" data-alt-text="Dual Axis Graph (GDP per Capita)">Dual Axis Graph (GDP overall)</button>
         </div>
 
         <div class="tab-content-container">
@@ -34,26 +34,32 @@
                 <p>No data available.</p>
             {% endif %}
         </div>
-        <div class="tab-content" id="gdp">
+        <div class="tab-content" id="gdp" onclick="toggleImage(this)">
             <div class="tooltip-text">Click to change to GDP per Capita</div>
             {% if image_paths['gdp'] %}
-                <img src="data:image/png;base64,{{ image_paths['gdp'] }}" alt="GDP Over Time">
+                <img src="data:image/png;base64,{{ image_paths['gdp'] }}" 
+                     alt="GDP Over Time" 
+                     data-alt-image="data:image/png;base64,{{ image_paths['gdp_per_capita'] }}">
             {% else %}
                 <p>No data available.</p>
             {% endif %}
         </div>
-        <div class="tab-content" id="gdp_change">
+        <div class="tab-content" id="gdp_change" onclick="toggleImage(this)">
             <div class="tooltip-text">Click to change to GDP per Capita</div>
             {% if image_paths['gdp_change'] %}
-                <img src="data:image/png;base64,{{ image_paths['gdp_change'] }}" alt="Change in GDP">
+                <img src="data:image/png;base64,{{ image_paths['gdp_change'] }}" 
+                     alt="Change in GDP" 
+                     data-alt-image="data:image/png;base64,{{ image_paths['gdp_per_capita_change'] }}">
             {% else %}
                 <p>No data available.</p>
             {% endif %}
         </div>
-        <div class="tab-content" id="dual_axis">
+        <div class="tab-content" id="dual_axis" onclick="toggleImage(this)">
             <div class="tooltip-text">Click to change to GDP per Capita</div>
             {% if image_paths['dual_axis'] %}
-                <img src="data:image/png;base64,{{ image_paths['dual_axis'] }}" alt="Dual Axis Graph">
+                <img src="data:image/png;base64,{{ image_paths['dual_axis'] }}" 
+                     alt="Dual Axis Graph" 
+                     data-alt-image="data:image/png;base64,{{ image_paths['dual_axis_alt'] }}">
             {% else %}
                 <p>No data available.</p>
             {% endif %}
@@ -63,4 +69,5 @@
 
     <script src="{{ url_for('static', filename='js/tabs.js') }}"></script>
     <script src="{{ url_for('static', filename='js/tooltip.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/altgraphs.js') }}"></script>
 </body>

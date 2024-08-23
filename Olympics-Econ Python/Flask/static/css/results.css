@@ -49,6 +49,11 @@ body {
   display: block;
 }
 
+.tab-button.active {
+  background-color: #333; /* Match button hover state */
+  color: #ffffff; /* Change text color on hover */
+}
+
 .tab-content img {
   width: 100%;
   max-height: 600px;
@@ -87,4 +92,10 @@ body {
 .tab-content#gdp_change:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
+}
+
+.tab-content#dual_axis:hover,
+.tab-content#gdp:hover,
+.tab-content#gdp_change:hover {
+  cursor: pointer;
 }
