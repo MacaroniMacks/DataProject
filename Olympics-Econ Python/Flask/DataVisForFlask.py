@@ -60,7 +60,7 @@ def generateGraphs(country_input, sport_input):
 
     # Check if either DataFrame is empty
     if sport_df.empty or gdp_df.empty:
-        return render_template('results.html', 
+        return render_template('errors.html', 
                                message=f"Skipping {sport} due to insufficient data.",
                                correlation_results={})
 
@@ -72,7 +72,7 @@ def generateGraphs(country_input, sport_input):
 
     # Skip sports with 2 or fewer distinct years after the first GDP year
     if years_after_first_gdp_year <= 2:
-        return render_template('results.html', 
+        return render_template('errors.html', 
                                message=f"Skipping {sport} due to insufficient data after {first_gdp_year}.",
                                correlation_results={})
 
